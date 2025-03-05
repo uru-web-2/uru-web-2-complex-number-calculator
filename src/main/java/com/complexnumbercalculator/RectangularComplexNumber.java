@@ -64,18 +64,18 @@ public class RectangularComplexNumber {
         return new RectangularComplexNumber(a.real - b.real, a.imaginary - b.imaginary);
     }
 
-    // Product of a complex number by a real number
-    public static RectangularComplexNumber product(RectangularComplexNumber a, double b) {
+    // Multiply of a complex number by a real number
+    public static RectangularComplexNumber multiply(RectangularComplexNumber a, double b) {
         return new RectangularComplexNumber(a.real * b, a.imaginary*b);
     }
 
-    // Product of a real number by a complex number
-    public static RectangularComplexNumber product(double a, RectangularComplexNumber b) {
+    // Multiply of a real number by a complex number
+    public static RectangularComplexNumber multiply(double a, RectangularComplexNumber b) {
         return new RectangularComplexNumber(a * b.real, b.imaginary*a);
     }
 
-    // Product of two complex numbers
-    public static RectangularComplexNumber product(RectangularComplexNumber a, RectangularComplexNumber b) {
+    // Multiply of two complex numbers
+    public static RectangularComplexNumber multiply(RectangularComplexNumber a, RectangularComplexNumber b) {
         return new RectangularComplexNumber((a.real*b.real)-(a.imaginary*b.imaginary), (a.real*b.imaginary)+(a.imaginary*b.real));
     }
 
@@ -111,7 +111,7 @@ public class RectangularComplexNumber {
     // Convert a rectangular complex number to a polar complex number
     public static PolarComplexNumber toPolar(RectangularComplexNumber rectangularComplexNumber) {
         return new PolarComplexNumber(
-                Math.sqrt(rectangularComplexNumber.real * rectangularComplexNumber.real + rectangularComplexNumber.imaginary * rectangularComplexNumber.imaginary),
+                Math.sqrt((rectangularComplexNumber.real * rectangularComplexNumber.real) + (rectangularComplexNumber.imaginary * rectangularComplexNumber.imaginary)),
                 Math.atan2(rectangularComplexNumber.imaginary, rectangularComplexNumber.real)
         );
     }

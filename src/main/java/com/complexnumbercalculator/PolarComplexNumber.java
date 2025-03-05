@@ -5,6 +5,7 @@ public class PolarComplexNumber {
     private double magnitude;
     private double angle;
 
+    // NOTE: The angle is in radians
     public PolarComplexNumber(double magnitude, double angle) {
         this.magnitude = magnitude;
         this.angle = angle;
@@ -35,70 +36,70 @@ public class PolarComplexNumber {
     }
 
     // Add a complex number to a real number
-    public static PolarComplexNumber add(PolarComplexNumber a, double b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.add(a.toRectangular(), b));
+    public static RectangularComplexNumber add(PolarComplexNumber a, double b) {
+        return RectangularComplexNumber.add(a.toRectangular(), b);
     }
 
     // Add a real number to a complex number
-    public static PolarComplexNumber add(double a, PolarComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.add(a, b.toRectangular()));
+    public static RectangularComplexNumber add(double a, PolarComplexNumber b) {
+        return RectangularComplexNumber.add(a, b.toRectangular());
     }
 
     // Add a complex number to a real number
-    public static PolarComplexNumber add(PolarComplexNumber a, RectangularComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.add(a.toRectangular(), b));
+    public static RectangularComplexNumber add(PolarComplexNumber a, RectangularComplexNumber b) {
+        return RectangularComplexNumber.add(a.toRectangular(), b);
     }
 
     // Add two complex numbers
-    public static PolarComplexNumber add(PolarComplexNumber a, PolarComplexNumber b) {
+    public static RectangularComplexNumber add(PolarComplexNumber a, PolarComplexNumber b) {
         RectangularComplexNumber aRectangular = a.toRectangular();
         RectangularComplexNumber bRectangular = b.toRectangular();
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.add(aRectangular, bRectangular));
+        return RectangularComplexNumber.add(aRectangular, bRectangular);
     }
 
     // Subtract a real number to a complex number
-    public static PolarComplexNumber subtract(PolarComplexNumber a, double b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.subtract(a.toRectangular(), b));
+    public static RectangularComplexNumber subtract(PolarComplexNumber a, double b) {
+        return RectangularComplexNumber.subtract(a.toRectangular(), b);
     }
 
     // Subtract a complex number to a real number
-    public static PolarComplexNumber subtract(double a, PolarComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.subtract(a, b.toRectangular()));
+    public static RectangularComplexNumber subtract(double a, PolarComplexNumber b) {
+        return RectangularComplexNumber.subtract(a, b.toRectangular());
     }
 
     // Subtract two complex numbers
-    public static PolarComplexNumber subtract(PolarComplexNumber a, PolarComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.subtract(a.toRectangular(), b.toRectangular()));
+    public static RectangularComplexNumber subtract(PolarComplexNumber a, PolarComplexNumber b) {
+        return RectangularComplexNumber.subtract(a.toRectangular(), b.toRectangular());
     }
 
-    // Product of a complex number by a real number
-    public static PolarComplexNumber product(PolarComplexNumber a, double b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.product(a.toRectangular(), b));
+    // Multiply of a complex number by a real number
+    public static RectangularComplexNumber multiply(PolarComplexNumber a, double b) {
+        return RectangularComplexNumber.multiply(a.toRectangular(), b);
     }
 
-    // Product of a real number by a complex number
-    public static PolarComplexNumber product(double a, PolarComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.product(a, b.toRectangular()));
+    // Multiply of a real number by a complex number
+    public static RectangularComplexNumber multiply(double a, PolarComplexNumber b) {
+        return RectangularComplexNumber.multiply(a, b.toRectangular());
     }
 
-    // Product of two complex numbers
-    public static PolarComplexNumber product(PolarComplexNumber a, PolarComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.product(a.toRectangular(), b.toRectangular()));
+    // Multiply of two complex numbers
+    public static RectangularComplexNumber multiply(PolarComplexNumber a, PolarComplexNumber b) {
+        return RectangularComplexNumber.multiply(a.toRectangular(), b.toRectangular());
     }
 
     // Division of a complex number by a real number
-    public static PolarComplexNumber divide(PolarComplexNumber a, double b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.divide(a.toRectangular(), b));
+    public static RectangularComplexNumber divide(PolarComplexNumber a, double b) {
+        return RectangularComplexNumber.divide(a.toRectangular(), b);
     }
 
     // Division of a real number by a complex number
-    public static PolarComplexNumber divide(double a, PolarComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.divide(a, b.toRectangular()));
+    public static RectangularComplexNumber divide(double a, PolarComplexNumber b) {
+        return RectangularComplexNumber.divide(a, b.toRectangular());
     }
 
     // Division of two complex numbers
-    public static PolarComplexNumber divide(PolarComplexNumber a, PolarComplexNumber b) {
-        return PolarComplexNumber.fromRectangular(RectangularComplexNumber.divide(a.toRectangular(), b.toRectangular()));
+    public static RectangularComplexNumber divide(PolarComplexNumber a, PolarComplexNumber b) {
+        return RectangularComplexNumber.divide(a.toRectangular(), b.toRectangular());
     }
 
     // Convert a rectangular complex number to a polar complex number
