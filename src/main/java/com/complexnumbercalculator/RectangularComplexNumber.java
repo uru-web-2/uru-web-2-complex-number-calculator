@@ -1,9 +1,13 @@
 package com.complexnumbercalculator;
 
+import org.json.JSONObject;
+
 // Rectangular form of a complex number (a + bi) where a is the real part and b is the imaginary part
 public class RectangularComplexNumber {
     private double real;
     private double imaginary;
+    static String REAL_KEY = "real";
+    static String IMAGINARY_KEY = "imaginary";
 
     public RectangularComplexNumber(double real, double imaginary) {
         this.real = real;
@@ -12,6 +16,13 @@ public class RectangularComplexNumber {
 
     public String toString() {
         return real + " + " + imaginary + "i";
+    }
+
+    public JSONObject toJSONObject() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(REAL_KEY, real);
+        jsonObject.put(IMAGINARY_KEY, imaginary);
+        return jsonObject;
     }
 
     // Get the real part of the complex number

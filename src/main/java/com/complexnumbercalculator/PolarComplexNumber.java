@@ -1,9 +1,14 @@
 package com.complexnumbercalculator;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 // Polar form of a complex number (r * (cos(theta) + i * sin(theta))) where r is the magnitude and theta is the angle
 public class PolarComplexNumber {
     private double magnitude;
     private double angle;
+    static String MAGNITUDE_KEY = "magnitude";
+    static String ANGLE_KEY = "angle";
 
     // NOTE: The angle is in radians
     public PolarComplexNumber(double magnitude, double angle) {
@@ -13,6 +18,13 @@ public class PolarComplexNumber {
 
     public String toString() {
         return magnitude + " * (cos(" + angle + ") + i * sin(" + angle + "))";
+    }
+
+    public JSONObject toJSONObject() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(MAGNITUDE_KEY, magnitude);
+        jsonObject.put(ANGLE_KEY, angle);
+        return jsonObject;
     }
 
     // Get the magnitude of the complex number

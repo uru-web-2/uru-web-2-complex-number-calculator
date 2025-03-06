@@ -389,14 +389,14 @@
                 .then(
                     response => response.json()
                 ).then(
-                data => {
+                response => {
                     if (outputType)
                         console.log(
-                            "Result: "+ data?.magnitude+" "+data?.angle+"+" +"radians"
+                            "Result: "+ response?.data?.magnitude+" "+response?.data?.angle+" " +"radians"
                         )
                     else
                         console.log(
-                            "Result: "+data?.real+" "+data?.imaginary+"i"
+                            "Result: "+response?.data?.real+" "+response?.data?.imaginary+"i"
                         )
                     clearForm()
                 }

@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.function.BiFunction;
 
 // Servlet that handles the operations with two rectangular complex numbers
-public class ApiRectangularServlet extends BaseServlet {
+public class ApiRectangularServlet extends ApiCalculatorBaseServlet {
     protected void calculate(HttpServletRequest request, HttpServletResponse response, BiFunction<RectangularComplexNumber, RectangularComplexNumber, RectangularComplexNumber> operator) throws IOException {
          // Get the JSON data from the request
         StringBuilder jsonBuffer = handleReadJSONData(request, response);
@@ -51,6 +51,6 @@ public class ApiRectangularServlet extends BaseServlet {
         RectangularComplexNumber result = operator.apply(a, b);
 
         // Write the result as a JSON object
-        handleWriteJSONData(response, result, returnType);
+        handleWriteSuccessJSONData(response, result, returnType);
     }
 }
