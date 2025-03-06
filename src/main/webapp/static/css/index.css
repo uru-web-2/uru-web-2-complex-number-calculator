@@ -1,0 +1,179 @@
+/* Root styles */
+:root {
+    --font-family: Arial, sans-serif;
+    --color-dark-primary: #364fc7;
+    --color-medium-primary: #4c6ef5;
+    --color-light-primary: #91a7ff;
+    --background-color: #f8f9fa;
+    --color: #212529;
+    --switch--height: 22px;
+    --switch--width: 40px;
+    --switch--slider--size: 16px;
+    --input--border-radius--size: 0.5rem;
+    --animation--movement--duration: 0.4s;
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--color);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: var(--switch--width);
+    height: var(--switch--height);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider styles */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-light-primary);
+    -webkit-transition: var(--animation--movement--duration);
+    transition: var(--animation--movement--duration);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: var(--switch--slider--size);
+    width: var(--switch--slider--size);
+    left: calc((var(--switch--height) - var(--switch--slider--size)) / 2);
+    bottom: calc((var(--switch--height) - var(--switch--slider--size)) / 2);
+    background-color: white;
+    -webkit-transition: var(--animation--movement--duration);
+    transition: var(--animation--movement--duration);
+}
+
+input:checked + .slider {
+    background-color: var(--color-medium-primary);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-medium-primary);
+}
+
+input:checked + .slider:before {
+    --diff: calc(var(--switch--width) - var(--switch--slider--size) - (var(--switch--height) - var(--switch--slider--size)));
+    -webkit-transform: translateX(var(--diff));
+    -ms-transform: translateX(var(--diff));
+    transform: translateX(var(--diff));
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: var(--switch--height);
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* H1 styles */
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* H2 styles */
+h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Label styles */
+label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Button styles */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--input--border-radius--size);
+    width: 8rem;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.button--primary {
+    background-color: var(--color-medium-primary);
+    color: var(--background-color);
+}
+
+.button--secondary {
+    background-color: var(--color-light-primary);
+    color: var(--background-color);
+}
+
+.button--primary:hover,
+.button--secondary:hover {
+    background-color: var(--color-dark-primary);
+}
+
+.button--primary:active,
+.button--secondary:active {
+    background-color: var(--color);
+}
+
+.button--secondary--operator {
+    width: auto;
+    padding: 0.5rem 1rem;
+}
+
+.button--secondary--operator--selected {
+    background-color: var(--color-dark-primary);
+    color: var(--background-color);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+    position: relative;
+    background-color: var(--background-color);
+    border-radius: var(--input--border-radius--size);
+    padding: 2rem;
+    width: 50%;
+    max-width: 30rem;
+}

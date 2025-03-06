@@ -108,6 +108,13 @@ public class ApiSessionServlet extends BaseServlet {
             return;
         }
 
+        // Check if the user already exists
+        if (users.containsKey(username)) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            writeFailJSONData(response, "username","Username already exists");
+            return;
+        }
+
         // Add the user to the users HashMap
         User user = new User(firstName, lastName, username, email, password);
         users.put(username, user);

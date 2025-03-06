@@ -5,13 +5,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/"})
-public class ResourceServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/dashboard/*"})
+public class ResourceDashboardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Forward the request to the JSP
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard.jsp");
         dispatcher.forward(request, response);
     }
 }
