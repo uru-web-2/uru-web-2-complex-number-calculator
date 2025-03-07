@@ -35,8 +35,8 @@ public class ApiSignInServlet extends ApiSessionBaseServlet{
         }
 
         // Check if the user exists
-        if (users.containsKey(username)) {
-            User user = users.get(username);
+        if (ApiSessionBaseServlet.users.containsKey(username)) {
+            User user = ApiSessionBaseServlet.users.get(username);
             if (user.getPassword().equals(password)) {
                 // Create a session for the user
                 request.getSession().setAttribute("username", username);

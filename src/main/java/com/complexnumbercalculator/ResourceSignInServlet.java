@@ -14,12 +14,10 @@ public class ResourceSignInServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        if (request.getSession().getAttribute("user") != null) {
+        if (request.getSession().getAttribute("username") != null) {
             response.sendRedirect(request.getContextPath() + "/dashboard");
             return;
         }
-         */
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/SignIn.jsp");
         dispatcher.forward(request, response);

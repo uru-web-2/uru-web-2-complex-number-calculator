@@ -1,12 +1,10 @@
 package com.complexnumbercalculator;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.function.BiFunction;
 
 // Servlet that handles the operations with two polar complex numbers
 public class ApiSessionBaseServlet extends BaseServlet {

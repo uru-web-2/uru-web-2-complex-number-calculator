@@ -35,7 +35,10 @@ public class BaseServlet extends HttpServlet {
 
     // Write JSON data to the response
     protected void writeJSONData(HttpServletResponse response, String status, JSONObject data) throws IOException {
-        writeJSONData(response, status, data.toString());
+        if (data == null)
+            writeJSONData(response, status, "null");
+        else
+            writeJSONData(response, status, data.toString());
     }
 
     // Write JSON data to the success response

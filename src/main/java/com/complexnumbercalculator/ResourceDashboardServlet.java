@@ -10,12 +10,10 @@ public class ResourceDashboardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        if (request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("username") == null) {
             response.sendRedirect(request.getContextPath() + "/sign-in");
             return;
         }
-        */
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard.jsp");
         dispatcher.forward(request, response);

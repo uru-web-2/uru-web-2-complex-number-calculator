@@ -9,7 +9,7 @@
     <script defer src="${pageContext.request.contextPath}/static/js/Dashboard.js"></script>
 </head>
 <body>
-<button class="icon-button icon-button--sign-out" onclick="handleSignOut(${pageContext.request.contextPath})">
+<button class="icon-button icon-button--sign-out" onclick="handleSignOut('${pageContext.request.contextPath}')">
     <span class="material-symbols-outlined">
         logout
     </span>
@@ -19,7 +19,7 @@
         <h1>Complex Number Calculator</h1>
     </div>
 
-    <form class="main-container__content-container" method="post">
+    <form class="main-container__content-container">
         <div class=" main-container__content-container__input-type-container">
             <div class="main-container__content-container__input-type-container__header">
                 <h2>Input Type</h2>

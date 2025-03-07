@@ -1,0 +1,5 @@
+/* Username and password styles */
+.input-container:has(#username),
+.input-container:has(#password) {
+    grid-column: 1/-1;
+}

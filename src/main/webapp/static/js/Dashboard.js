@@ -107,26 +107,28 @@ function handleCalculate(event) {
             return_type: returnType
         }
     }
+    const jsonBody = JSON.stringify(body)
+    console.log("JSON: " + jsonBody)
 
     fetch(url, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(body)
+        body: jsonBody,
     })
         .then(
             response => response.json()
         ).then(
         response => {
+            let result
             if (outputType)
-                console.log(
-                    "Result: " + response?.data?.magnitude + " " + response?.data?.angle + " " + "radians"
-                )
+                result = response?.data?.magnitude + " " + response?.data?.angle + " " + "radians"
             else
-                console.log(
-                    "Result: " + response?.data?.real + " " + response?.data?.imaginary + "i"
-                )
+                result = response?.data?.real + " " + response?.data?.imaginary + "i"
+
+            console.log("Result: " + result)
+            alert("Result: " + result)
             handleClearForm()
         }
     )

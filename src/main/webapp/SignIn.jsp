@@ -1,15 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ralva
-  Date: 3/6/2025
-  Time: 5:01 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Sign In</title>
      <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/SignIn.css">
     <script defer src="${pageContext.request.contextPath}/static/js/SignIn.js"></script>
 </head>
 <body>
@@ -18,7 +12,7 @@
         <h1>Sign In</h1>
     </div>
 
-    <form class="main-container__content-container" method="post">
+    <form class="main-container__content-container" data-baseurl="${pageContext.request.contextPath}">
         <div class="input-container">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required
@@ -30,7 +24,7 @@
                        class="input-container__input">
         </div>
         <div class="main-container__content-container__footer-container">
-            <a href="${pageContext.request.contextPath}/sign-up" class="link">Sign Up</a>
+            <a href="${pageContext.request.contextPath}/sign-up" class="link button--link">Sign Up</a>
             <button id="submit-button" class="button--primary" type="submit">Sign In</button>
         </div>
     </form>

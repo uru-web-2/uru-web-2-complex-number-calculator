@@ -1,0 +1,7 @@
+/* Email, Username, Password and Password confirmation styles */
+.input-container:has(#username),
+.input-container:has(#email),
+.input-container:has(#password),
+.input-container:has(#confirm-password) {
+    grid-column: 1/-1;
+}

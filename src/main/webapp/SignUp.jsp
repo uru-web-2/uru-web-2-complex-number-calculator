@@ -3,6 +3,7 @@
 <head>
     <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/SignUp.css">
     <script defer src="${pageContext.request.contextPath}/static/js/SignUp.js"></script>
 </head>
 <body>
@@ -11,7 +12,7 @@
         <h1>Sign Up</h1>
     </div>
 
-    <form class="main-container__content-container" method="post">
+    <form class="main-container__content-container" data-baseurl="${pageContext.request.contextPath}">
         <div class="input-container">
             <label for="first-name">First Name</label>
             <input type="text" id="first-name" name="first-name" required
@@ -43,7 +44,7 @@
                        class="input-container__input">
         </div>
         <div class="main-container__content-container__footer-container">
-            <a href="${pageContext.request.contextPath}/sign-in" class="link">Sign In</a>
+            <a href="${pageContext.request.contextPath}/sign-in" class="link button--link">Sign In</a>
             <button id="submit-button" class="button--primary" type="submit">Sign Up</button>
         </div>
     </form>

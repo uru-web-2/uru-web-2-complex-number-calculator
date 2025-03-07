@@ -1,5 +1,6 @@
 /* Complex number container styles */
 .main-container__content-container__complex-number-container {
+    grid-column: 1/-1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.4rem 2rem;
@@ -50,9 +51,14 @@
 }
 
 /* Sign out button styles */
-.button--secondary--sign-out {
+.icon-button--sign-out {
     position: absolute;
     top: 1rem;
     right: 1rem;
     background: transparent;
+}
+
+/* Overwriting styles */
+.main-container .main-container__content-container{
+    gap: 2rem 1rem;
 }

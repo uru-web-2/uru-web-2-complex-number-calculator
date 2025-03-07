@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.function.BiFunction;
 
 // Servlet that handles the sign-up of a user
 @WebServlet(urlPatterns = {"/api/sign-up"})
@@ -54,7 +53,7 @@ public class ApiSignUpServlet extends ApiSessionBaseServlet {
         }
 
         // Check if the user already exists
-        if (users.containsKey(username)) {
+        if (ApiSessionBaseServlet.users.containsKey(username)) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             writeFailJSONData(response, "username","Username already exists");
             return;
@@ -62,7 +61,7 @@ public class ApiSignUpServlet extends ApiSessionBaseServlet {
 
         // Add the user to the users HashMap
         User user = new User(firstName, lastName, username, email, password);
-        users.put(username, user);
+        ApiSessionBaseServlet.users.put(username, user);
 
         // Write the result as a JSON object
         writeSuccessJSONData(response, null);
