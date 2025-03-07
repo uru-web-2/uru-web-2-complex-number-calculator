@@ -1,38 +1,3 @@
-/* Main container styles */
-.main-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: 600px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Header container styles */
-.main-container__header-container {
-    grid-column: 1/-1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--color-medium-primary);
-    color: var(--background-color);
-}
-
-.main-container,
-.main-container__header-container {
-    border-radius: 0.5rem;
-}
-
-/* Content container styles */
-.main-container__content-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    width: 100%;
-    align-items: center;
-    justify-items: left;
-    padding: 2rem;
-}
-
 /* Complex number container styles */
 .main-container__content-container__complex-number-container {
     display: grid;
@@ -48,34 +13,6 @@
     justify-content: left;
     align-items: center;
     padding-left: var(--input--border-radius--size);
-}
-
-/* Complex number input container styles */
-.main-container__content-container__complex-number-container__input-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-    justify-content: left;
-    align-items: center;
-}
-
-/* Complex number input label styles */
-.main-container__content-container__complex-number-container__input-container label {
-    padding-left: var(--input--border-radius--size);
-}
-
-/* Complex number input styles */
-.main-container__content-container__complex-number-container__input-container__input {
-    font-family: var(--font-family);
-    padding: 0.5rem;
-    outline: none;
-    border: 2px solid var(--color-light-primary);
-    border-radius: var(--input--border-radius--size);
-    width: 100%;
-}
-
-.main-container__content-container__complex-number-container__input-container__input:focus {
-    border-color: var(--color-medium-primary);
 }
 
 /* Operators container styles */
@@ -112,11 +49,10 @@
     align-items: center;
 }
 
-/* Footer container styles */
-.main-container__content-container__footer-container {
-    grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    place-items: center;
+/* Sign out button styles */
+.button--secondary--sign-out {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
 }

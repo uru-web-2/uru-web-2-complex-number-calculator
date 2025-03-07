@@ -14,8 +14,14 @@ public class ResourceSignInServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Forward the request to the JSP
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/SignUp.jsp");
+        /*
+        if (request.getSession().getAttribute("user") != null) {
+            response.sendRedirect(request.getContextPath() + "/dashboard");
+            return;
+        }
+         */
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/SignIn.jsp");
         dispatcher.forward(request, response);
     }
 }

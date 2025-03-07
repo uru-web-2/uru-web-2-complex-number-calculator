@@ -1,6 +1,24 @@
 const API_BASE_URL = "http://localhost:8080/complex-number-calculator-1.0-SNAPSHOT/api"
 let selectedOperation = "add"
 
+// Sign out handler
+function handleSignOut(baseURL) {
+    fetch(API_BASE_URL + "/sign-out", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(
+            response => {
+                if (response.ok)
+                    window.location.href = baseURL+"/sign-in"
+                else
+                    alert("Failed to sign out.")
+            }
+        )
+}
+
 // Update input type text
 function updateInputTypeText() {
     const checkbox = document.getElementById("input-type-switch");
@@ -40,16 +58,16 @@ function updateSelectedOperation(button) {
     selectedOperation = operation
 }
 
-// Clear form
-function clearForm() {
+// Clear form handler
+function handleClearForm() {
     document.getElementById("a-first-part").value = "";
     document.getElementById("a-second-part").value = "";
     document.getElementById("b-first-part").value = "";
     document.getElementById("b-second-part").value = "";
 }
 
-// Calculate
-function calculate(event) {
+// Calculate handler
+function handleCalculate(event) {
     event.preventDefault();
 
     const aFirstPart = document.getElementById("a-first-part").value;
@@ -109,7 +127,7 @@ function calculate(event) {
                 console.log(
                     "Result: " + response?.data?.real + " " + response?.data?.imaginary + "i"
                 )
-            clearForm()
+            handleClearForm()
         }
     )
 }
@@ -120,10 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
 
     // Attach an event listener to the form's submit event
-    form.addEventListener("submit", calculate);
+    form.addEventListener("submit", handleCalculate);
 
     // Attach an event listener to the form's reset event
-    form.addEventListener("reset", clearForm);
+    form.addEventListener("reset", handleClearForm);
 
     // Attach an event listener to the operator buttons
     const operatorButtons = document.querySelectorAll(".button--secondary--operator")
